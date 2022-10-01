@@ -1,5 +1,6 @@
 import yfinance as yf
 import datetime as dt
+import uvicorn
 from supertrend import Supertrend
 from signals import signal_given_st_indicator
 from fastapi import FastAPI
@@ -44,3 +45,7 @@ async def root(new_tickers):
     tickers=list(set(tickers))
     
     return tickers
+
+
+if __name__ == "__main__":
+    uvicorn.run(app, host="0.0.0.0", port=8000)
