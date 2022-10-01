@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+
+<html>
+    <head>
+        <title>Recommendation</title>
+    </head>
+    <body>
+        <h1>Look ma! Recommendationh!</h1>
+        <tbody>
+           <tr>
+              {% for row in signals %}
+              <ul>
+                {% if signals[row]['signal']  == 'BUY' %}
+                <li><td><bold>{{row + " : "}}</bold> <bold style="color:green">{{ signals[row]['signal'] +"\t"}}</bold> {{signals[row]['count'] }}</td></li>
+               {% endif %}
+               {% if signals[row]['signal']  == 'SELL' %}
+               <li><td><bold>{{row + " : "}}</bold> <bold style="color:red">{{ signals[row]['signal'] +"\t"}}</bold> {{signals[row]['count'] }}</td></li>
+              {% endif %}
+                
+              </ul> 
+              {% endfor %}
+           </tr>
+        </tbody>
+    </body>
+</html>
