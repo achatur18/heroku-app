@@ -1,26 +1,96 @@
 <!DOCTYPE html>
-
-
 <html>
-    <head>
-        <title>Recommendation</title>
-    </head>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 10px;
+  /* height: 300px; Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+</style>
+</head>
     <body>
-        <h1>Look ma! Recommendationh!</h1>
-        <tbody>
-           <tr>
-              {% for row in signals %}
-              <ul>
-                {% if signals[row]['signal']  == 'BUY' %}
-                <li><td><bold>{{row + " : "}}</bold> <bold style="color:green">{{ signals[row]['signal'] +"\t"}}</bold> {{signals[row]['count'] }}</td></li>
-               {% endif %}
-               {% if signals[row]['signal']  == 'SELL' %}
-               <li><td><bold>{{row + " : "}}</bold> <bold style="color:red">{{ signals[row]['signal'] +"\t"}}</bold> {{signals[row]['count'] }}</td></li>
-              {% endif %}
-                
-              </ul> 
-              {% endfor %}
-           </tr>
-        </tbody>
+
+        <h2>Look ma! Recommendationh!</h2>
+
+        <div class="row">
+          <div class="column" style="background-color:#aaa;">
+            <tbody>
+                <h3>10 - 3</h3>
+               <tr>
+                  {% for row in signals3 %}
+                  <ul>
+    
+                    {% if signals3[row]['signal']  == 'BUY' %}
+                    <li><td><bold>{{row + " : "}}</bold> <bold style="color:green">{{ signals3[row]['signal'] +"\t"}}</bold> <bold style="color:green">{{signals3[row]['count']}}</bold>{{'\t'}}<bold style="color:red">{{signals3[row]['PREV_COUNT'] }}</bold></td></li>
+                    {% endif %}
+    
+                    {% if signals3[row]['signal']  == 'SELL' %}
+                    <li><td><bold>{{row + " : "}}</bold> <bold style="color:red">{{ signals3[row]['signal'] +"\t"}}</bold> <bold style="color:red">{{signals3[row]['count']}}</bold>{{'\t'}}<bold style="color:green">{{signals3[row]['PREV_COUNT'] }}</bold></td></li>
+                    {% endif %}
+                    
+                  </ul> 
+                  {% endfor %}
+               </tr>
+            </tbody>
+          </div>
+          <div class="column" style="background-color:#bbb;">
+            <tbody>
+                <h3>10 - 5</h3>
+               <tr>
+                  {% for row in signals5 %}
+                  <ul>
+    
+                    {% if signals5[row]['signal']  == 'BUY' %}
+                    <li><td><bold>{{row + " : "}}</bold> <bold style="color:green">{{ signals5[row]['signal'] +"\t"}}</bold> <bold style="color:green">{{signals5[row]['count']}}</bold>{{'\t'}}<bold style="color:red">{{signals5[row]['PREV_COUNT'] }}</bold></td></li>
+                    {% endif %}
+    
+                    {% if signals5[row]['signal']  == 'SELL' %}
+                    <li><td><bold>{{row + " : "}}</bold> <bold style="color:red">{{ signals5[row]['signal'] +"\t"}}</bold> <bold style="color:red">{{signals5[row]['count']}}</bold>{{'\t'}}<bold style="color:green">{{signals5[row]['PREV_COUNT'] }}</bold></td></li>
+                    {% endif %}
+                    
+                  </ul> 
+                  {% endfor %}
+               </tr>
+            </tbody>
+          </div>
+          <div class="column" style="background-color:#ccc;">
+            <tbody>
+                <h3>10 - 7</h3>
+               <tr>
+                  {% for row in signals7 %}
+                  <ul>
+    
+                    {% if signals7[row]['signal']  == 'BUY' %}
+                    <li><td><bold>{{row + " : "}}</bold> <bold style="color:green">{{ signals7[row]['signal'] +"\t"}}</bold> <bold style="color:green">{{signals7[row]['count']}}</bold>{{'\t'}}<bold style="color:red">{{signals7[row]['PREV_COUNT'] }}</bold></td></li>
+                    {% endif %}
+    
+                    {% if signals7[row]['signal']  == 'SELL' %}
+                    <li><td><bold>{{row + " : "}}</bold> <bold style="color:red">{{ signals7[row]['signal'] +"\t"}}</bold> <bold style="color:red">{{signals7[row]['count']}}</bold>{{'\t'}}<bold style="color:green">{{signals7[row]['PREV_COUNT'] }}</bold></td></li>
+                    {% endif %}
+                    
+                  </ul> 
+                  {% endfor %}
+               </tr>
+            </tbody>
+          </div>
+        </div>
+        
+
+
     </body>
 </html>
